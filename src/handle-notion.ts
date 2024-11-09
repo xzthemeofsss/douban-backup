@@ -34,6 +34,7 @@ const notion = new Client({
  * the Notion database
  */
 export default async function handleNotion(feeds: FeedItem[]): Promise<void> {
+  consola.log(feeds);
   const groupByCategory: Partial<Record<ItemCategory, FeedItem[]>> = feeds.reduce(
     (acc, feed) => {
       if (!acc[feed.category]) {
